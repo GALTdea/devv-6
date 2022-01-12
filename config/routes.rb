@@ -1,6 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  get 'users/edit'
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
 authenticate :user, lambda { |u| u.admin? } do
